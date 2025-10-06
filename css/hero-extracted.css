@@ -214,8 +214,15 @@
         font-size: 0.8rem !important;
     }
 }
+/* Smooth Scrolling Enhancement */
+html {
+    scroll-behavior: smooth;
+}
+
 .featured-collections { scroll-margin-top: 80px; }
 .buy-luxury-watches { scroll-margin-top: 80px; }
+.sell-with-us { scroll-margin-top: 100px; }
+#about { scroll-margin-top: 100px; }
 /* Enhanced Video Styles */
 .video-container { 
     position: relative; 
