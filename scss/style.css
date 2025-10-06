@@ -1482,9 +1482,25 @@ section.featured-watche-wrapper .featured-watches .owl-dots .owl-dot.active {
 }
 
 section.how-it-works {
-  background-color: #f5f5f5;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   text-align: center;
   padding: 0rem 0 1rem 0;
+}
+
+/* Text styling for how-it-works section */
+section.how-it-works .main-text h2 {
+  color: #ffffff;
+}
+
+section.how-it-works .main-text h4 {
+  color: #e0e0e0;
+}
+
+section.how-it-works .main-text p {
+  color: #e0e0e0;
 }
 
 section.how-it-works .how-it-works-boxes {
@@ -1552,7 +1568,7 @@ section.how-it-works .how-it-works-boxes .works-item span img {
 }
 
 section.how-it-works .how-it-works-boxes .works-item h3 {
-  color: #38383B;
+  color: #ffffff;
   font-size: 20px;
   letter-spacing: 1px;
   line-height: 24px;
@@ -1562,7 +1578,7 @@ section.how-it-works .how-it-works-boxes .works-item h3 {
 }
 
 section.how-it-works .how-it-works-boxes .works-item p {
-  color: #38383B;
+  color: #e0e0e0;
   font-size: 15px;
   letter-spacing: 0.3px;
   line-height: 23px;
@@ -1603,24 +1619,42 @@ section.how-it-works .how-it-works-boxes .owl-nav .owl-next {
 
 section.what-we-offer {
   text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 60px 0;
 }
 
 section.what-we-offer .offers-item {
   margin: 0 1rem;
-  background-color: rgba(228, 223, 194, 0.4);
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../images/01.jpg');
+  background-size: cover;
+  background-position: center;
   padding: 2rem;
   border-radius: 1rem;
   border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+section.what-we-offer .offers-item h4 {
+  color: #ffffff;
 }
 
 section.what-we-offer .offers-item p {
   min-height: 195px;
+  color: #e0e0e0;
+}
+
+section.what-we-offer .main-text h2 {
+  color: #ffffff;
 }
 
 section.what-we-offer .main-text p {
   margin: 0 auto;
   font-size: .9rem;
   max-width: 730px;
+  color: #e0e0e0;
 }
 
 section.what-we-offer .main-text h4 {
@@ -1780,7 +1814,24 @@ section.purchase-watches ul.arrow-list li:before {
 }
 
 section.img-text-section {
-  padding: 0 0 5rem;
+  padding: 60px 0 5rem;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Update text colors for img-text-section */
+section.img-text-section .main-text h2 {
+  color: #ffffff;
+}
+
+section.img-text-section .main-text h4 {
+  color: #ffffff;
+}
+
+section.img-text-section .main-text p {
+  color: #e0e0e0;
 }
 
 section .img-text-block {
