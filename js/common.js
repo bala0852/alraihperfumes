@@ -1,9 +1,55 @@
 // CUSTOM JQUERY UI START
 
-// AFFIX NAVIGATION 
-$(document).ready(function() {
+// Smooth Scrolling for Navigation Links
+$(document).ready(function () {
+    $('.smooth-scroll').on('click', function (e) {
+        e.preventDefault();
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - 100
+            }, 1000, 'easeInOutExpo');
+        }
+    });
+});
 
-    var toggleAffix = function(affixElement, scrollElement, wrapper) {
+// Header Video Background Enhancement
+$(document).ready(function () {
+    // Ensure video plays
+    var video = $('.video-background video')[0];
+    if (video) {
+        video.play().catch(function (error) {
+            console.log('Video autoplay prevented:', error);
+        });
+    }
+
+    // Add scroll effect to header
+    $(window).scroll(function () {
+        var scrolled = $(this).scrollTop();
+        var rate = scrolled * -0.5;
+        $('.video-background').css('transform', 'translate3d(0, ' + rate + 'px, 0)');
+    });
+});
+
+// Navigation Active State
+$(document).ready(function () {
+    $(window).scroll(function () {
+        var scrollDistance = $(window).scrollTop();
+
+        $('.nav-link').each(function (i) {
+            var target = $($(this).attr('href'));
+            if (target.length && target.offset().top <= scrollDistance + 200) {
+                $('.nav-link').removeClass('active');
+                $(this).addClass('active');
+            }
+        });
+    });
+});
+
+// AFFIX NAVIGATION 
+$(document).ready(function () {
+
+    var toggleAffix = function (affixElement, scrollElement, wrapper) {
 
         var height = affixElement.outerHeight(),
             top = wrapper.offset().top;
@@ -18,12 +64,12 @@ $(document).ready(function() {
 
     };
 
-    $('[data-toggle="affix"]').each(function() {
+    $('[data-toggle="affix"]').each(function () {
         var ele = $(this),
             wrapper = $('<div></div>');
 
         ele.before(wrapper);
-        $(window).on('scroll resize', function() {
+        $(window).on('scroll resize', function () {
             toggleAffix(ele, $(this), wrapper);
         });
 
@@ -33,7 +79,7 @@ $(document).ready(function() {
 
 });
 // OWL JS
-$(document).ready(function() {
+$(document).ready(function () {
 
     $('#productBrands').owlCarousel({
         loop: false,

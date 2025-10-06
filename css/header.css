@@ -1,0 +1,425 @@
+/* ================= HEADER WITH VIDEO BACKGROUND ================= */
+.main-header {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+/* Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: videoZoom 20s linear infinite alternate;
+}
+
+@keyframes videoZoom {
+    from { transform: translate(-50%, -50%) scale(1); }
+    to { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(13, 15, 24, 0.8) 0%,
+        rgba(22, 27, 46, 0.7) 40%,
+        rgba(31, 33, 64, 0.6) 70%,
+        rgba(44, 35, 80, 0.7) 100%
+    );
+    z-index: 2;
+}
+
+/* Header Content */
+.header-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Brand Logo */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    filter: brightness(1.2) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}
+
+.brand-name {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #ffffff 0%, #d9def8 50%, #b5c2ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Navigation */
+.main-navigation {
+    text-align: center;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    position: relative;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Header Info */
+.header-info {
+    text-align: right;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateX(-5px);
+    color: #b5c2ff;
+}
+
+.info-item i {
+    font-size: 14px;
+    color: #667eea;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.info-item:hover i {
+    color: #764ba2;
+    transform: scale(1.1);
+}
+
+/* Floating Animation */
+.header-content {
+    animation: floatHeader 6s ease-in-out infinite;
+}
+
+@keyframes floatHeader {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Glow Effects */
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(102, 126, 234, 0.1) 0%,
+        transparent 50%
+    );
+    animation: rotateGlow 30s linear infinite;
+    z-index: 2;
+}
+
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Call-to-Action Button in Header */
+.header-cta {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-header {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-header:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Scroll Down Indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: #ffffff;
+    text-align: center;
+}
+
+.scroll-down .scroll-arrow {
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 25px;
+    position: relative;
+    margin: 0 auto 10px;
+}
+
+.scroll-down .scroll-arrow::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: scrollAnimation 2s infinite;
+}
+
+@keyframes scrollAnimation {
+    0% { top: 8px; opacity: 1; }
+    50% { top: 20px; opacity: 0.5; }
+    100% { top: 8px; opacity: 1; }
+}
+
+.scroll-down p {
+    font-size: 0.8rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1199.98px) {
+    .nav-menu {
+        gap: 30px;
+    }
+    
+    .brand-name {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .main-header {
+        height: auto;
+        min-height: 70vh;
+        padding: 30px 0;
+    }
+    
+    .header-content .row {
+        text-align: center;
+    }
+    
+    .brand-logo {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    .nav-menu {
+        gap: 25px;
+        margin-bottom: 20px;
+    }
+    
+    .header-info {
+        text-align: center;
+    }
+    
+    .contact-info {
+        align-items: center;
+    }
+    
+    .info-item {
+        justify-content: center;
+    }
+    
+    .info-item:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .main-header {
+        min-height: 60vh;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+    
+    .brand-name {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .logo-img {
+        height: 40px;
+    }
+    
+    .contact-info {
+        gap: 8px;
+    }
+    
+    .info-item {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .main-header {
+        min-height: 50vh;
+    }
+    
+    .brand-logo {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .contact-info {
+        margin-top: 15px;
+    }
+    
+    .nav-menu {
+        gap: 12px;
+    }
+    
+    .nav-link {
+        font-size: 0.8rem;
+        padding: 8px 0;
+    }
+}
+
+/* Smooth Scrolling Enhancement */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Additional Visual Enhancements */
+.main-header .container {
+    position: relative;
+    z-index: 4;
+}
+
+/* Mobile Menu Toggle (if needed for future expansion) */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 575.98px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+}
